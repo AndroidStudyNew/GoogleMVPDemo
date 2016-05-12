@@ -65,12 +65,6 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
         return fragment;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        mPresenter.start();
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,6 +92,12 @@ public class TaskDetailFragment extends Fragment implements TaskDetailContract.V
     @Override
     public void setPresenter(@NonNull TaskDetailContract.Presenter presenter) {
         mPresenter = checkNotNull(presenter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPresenter.start();
     }
 
     @Override
